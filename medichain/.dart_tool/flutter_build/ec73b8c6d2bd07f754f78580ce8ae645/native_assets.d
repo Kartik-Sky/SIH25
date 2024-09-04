@@ -1,0 +1,1 @@
+ D:\\SIH\\appdev\\medichain\\.dart_tool\\flutter_build\\ec73b8c6d2bd07f754f78580ce8ae645\\native_assets.yaml: 
