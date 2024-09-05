@@ -82,7 +82,10 @@ flutter:
       - assets/Tests/XRay.png
       - assets/Tests/Biopsy.jpg
       - assets/Tests/Graph.jpg
-
+      - assets/Medicines/Pills.jpg
+      - assets/Medicines/Syrup.jpg
+      - assets/Medicines/Syringe.jpg
+      - assets/Medicines/Tablet.jpg
       
 
   #   - images/a_dot_burr.jpeg

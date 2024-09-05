@@ -29,7 +29,7 @@ class _PrescriptionCardState extends State<PrescriptionCard> {
       width: MediaQuery.sizeOf(context).width,
       margin: EdgeInsets.only(left: 25,right: 25,bottom:20),
       padding: EdgeInsets.only(left:10,top:10),
-      // height: 180,
+      // height: 180, 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         

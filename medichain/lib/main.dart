@@ -44,7 +44,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   
   double BottomIconSize = 30;
-  int _current_value=0;
+  int _current_value=4;
 
   @override
   Widget build(BuildContext context) {
@@ -55,19 +55,33 @@ class _MyHomePageState extends State<MyHomePage> {
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       appBar: AppBar(
-        title: Row(
-          children: [
-            CircleAvatar(
-              radius: 25,
-              backgroundImage:AssetImage(profile_picture_link,),
-            ),
-            SizedBox(width: 20,),
-            Text(name, style:GoogleFonts.sofiaSansExtraCondensed(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w800,
-                    
-                  )),
-          ],
+        title: Container(
+          padding: EdgeInsets.only(bottom: (_current_value==4)?5:0),
+          decoration: BoxDecoration(
+            border:(_current_value==4)?Border(bottom: BorderSide(color: Colors.grey,width: 1)):Border()
+          ),
+          child: Row(
+            children: [
+              (_current_value!=4)?CircleAvatar(
+                radius: 25,
+                backgroundImage:AssetImage(profile_picture_link,),
+              ): Container(
+                margin: EdgeInsets.only(top:5,),
+                child: Text("Profile Page",
+                style:GoogleFonts.poppins(
+                  fontSize:25,
+                  fontWeight: FontWeight.w600,
+                )
+                )
+              ),
+              SizedBox(width: 20,),
+              (_current_value!=4)?Text(name, style:GoogleFonts.sofiaSansExtraCondensed(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800,
+                      
+                    )):Container(),
+            ],
+          ),
         ),
           
           ),
@@ -132,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: BottomIconSize)),
                 onPressed: () => {
                   _PageController.jumpToPage(3),
-                  log('2'), 
+                  log('3'), 
                   setState (() =>  _current_value=3),
                   
                 },),
@@ -143,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: BottomIconSize)),
                 onPressed: () => {
                   _PageController.jumpToPage(4),
-                  log('3'), 
+                  log('4'), 
                   setState (() =>  _current_value=4),
                   
                 },)
@@ -153,15 +167,31 @@ class _MyHomePageState extends State<MyHomePage> {
       body: PageView(
         controller: _PageController,
         physics: NeverScrollableScrollPhysics(),
-        children: const [
-          HomePage(),
-          HistoryPage(),
-          EmergencyPage(),
-          MedicationsPage(),
-          ProfilePage()
+        children: [
+          const HomePage(),
+          const HistoryPage(),
+          const EmergencyPage(),
+          const MedicationsPage(),
+          ProfilePage(details:person)
         ],
       )
       
     );
   }
 }
+
+PersonDetails person = PersonDetails(
+    id: "1234 1234 1234",
+    firstName: "Kartik",
+    lastName: "Goyal",
+    dateOfBirth: DateTime(2005, 2, 18),
+    gender: "Male",
+    phoneNumber: "+91 94271 39950",
+    email: "kaartik05@gmail.com",
+    address: ["B-103","Ishan Heights","Off New C.G. Road","Chandkheda","Ahmedabad","Gujarat","382424"],
+    emergencyContactName: "Mukesh Goyal",
+    emergencyContactNumber: "+91 98980 45811",
+    bloodGroup: "O+",
+    allergies: "Penicillin",
+    medicalHistory: "Vitamin D Deficiency, Low Immunity",
+  );
