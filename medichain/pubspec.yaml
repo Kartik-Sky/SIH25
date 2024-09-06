@@ -86,6 +86,7 @@ flutter:
       - assets/Medicines/Syrup.jpg
       - assets/Medicines/Syringe.jpg
       - assets/Medicines/Tablet.jpg
+      - assets/Dialogs/Prescription/Apollo_Hospitals_Logo.png
       
 
   #   - images/a_dot_burr.jpeg

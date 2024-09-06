@@ -17,6 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Container(
         margin: EdgeInsets.only(top:10,bottom:40,left:15,right:30 ),
         child:Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               children: [
@@ -40,10 +41,17 @@ class _ProfilePageState extends State<ProfilePage> {
                       style:GoogleFonts.robotoCondensed(
                         fontSize: 12
                       )
-                    )
+                    ),
 
                   ],
                 )
+              ],
+            ),
+            const SizedBox(height: 20,),
+            
+            Row(
+              children: [
+                
               ],
             )
           ],
