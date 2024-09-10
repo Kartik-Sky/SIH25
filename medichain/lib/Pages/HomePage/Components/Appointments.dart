@@ -1,8 +1,11 @@
 // import 'dart:html';
 
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medichain/main.dart';
 
 class Appointments extends StatefulWidget {
   const Appointments({super.key});
@@ -70,12 +73,35 @@ class _AppointmentCardState extends State<AppointmentCard> {
                   fontSize:13,
                 )
               ),
-              IconButton(
-                icon:Icon(Icons.more_vert),
-                onPressed: () => {
-                  print(widget.id)
+              PopupMenuButton<String>(
+                color: Colors.white,
+                icon: Icon(Icons.more_vert),
+                onSelected: (String value) {
+                  print(value);
                 },
-              )
+                itemBuilder: (BuildContext context) {
+                  return [
+                    PopupMenuItem<String>(
+                      value: 'Cancel Appointment ${widget.id}',
+                      child: GestureDetector(
+                        onTap: () {
+                          log("Cancel Appointment ${widget.id}");
+                          Navigator.pop(context);
+                        },
+                        child: Text('Cancel Appointment',
+                          style:GoogleFonts.poppins(
+                            color: Theme.of(context).colorScheme.inverseSurface,
+                            letterSpacing: -0.9,
+                            fontWeight: FontWeight.bold
+                        
+                          )
+                        ),
+                      ),
+                    ),
+                  ];
+                },
+                )
+
             ],
           ),
           const SizedBox(
@@ -162,6 +188,7 @@ var MonthMap={
   11:'Nov',
   12:'Dec',
 };
+
 class AppointmentDetails{
   String id = '-1';
   String patientName= "John Doe";
@@ -172,7 +199,17 @@ class AppointmentDetails{
   String hospitalLocation = "";
   String imagePath="";
   int Duration = 15;
-  AppointmentDetails(this.id,this.patientName,this.doctorName,this.doctorType, this.appointmentTime,this.hospitalName,this.hospitalLocation, this.imagePath, this.Duration);
+  AppointmentDetails(
+  this.id,
+  this.patientName,
+  this.doctorName,
+  this.doctorType,
+  this.appointmentTime,
+  this.hospitalName,
+  this.hospitalLocation, 
+  this.imagePath, 
+  this.Duration
+  );
 
 }
 

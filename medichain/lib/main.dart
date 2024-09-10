@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medichain/LoginPage.dart';
 import 'dart:math' as math;
 import 'package:medichain/Pages/EmergencyPage/EmergencyPage.dart';
 import 'package:medichain/Pages/HistoryPage/HistoryPage.dart';
@@ -11,6 +12,8 @@ import 'package:medichain/Pages/ProfilePage/ProfilePage.dart';
 
 Color primaryColor = const Color.fromARGB(255, 115, 203, 118);
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -28,6 +31,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Medichain'),
+      // home:LoginPage()
     );
   }
 }
@@ -49,16 +53,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final _PageController = PageController(initialPage: _current_value);
+    String _emergencyPageType ="Ambulance";
     String name= "Kartik Goyal";
     String profile_picture_link = 'assets/profile_picture.jpeg';
     return Scaffold(
       extendBody: true,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       appBar: AppBar(
+        actions: [
+          IconButton(icon: Icon(Icons.settings),
+          onPressed: () {
+            log("Settins");
+          },
+          )
+        ],
         title: Container(
           padding: EdgeInsets.only(bottom: (_current_value==4)?5:0),
           decoration: BoxDecoration(
-            border:(_current_value==4)?Border(bottom: BorderSide(color: Colors.grey,width: 1)):Border()
+            // border:(_current_value==4)?Border(bottom: BorderSide(color: Colors.grey,width: 1)):Border()
           ),
           child: Row(
             children: [
@@ -170,7 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           const HomePage(),
           const HistoryPage(),
-          const EmergencyPage(),
+          EmergencyPage(pageType: _emergencyPageType,),
           const MedicationsPage(),
           ProfilePage(details:person)
         ],
@@ -192,6 +204,6 @@ PersonDetails person = PersonDetails(
     emergencyContactName: "Mukesh Goyal",
     emergencyContactNumber: "+91 98980 45811",
     bloodGroup: "O+",
-    allergies: "Penicillin",
-    medicalHistory: "Vitamin D Deficiency, Low Immunity",
+    allergies: ["Penicillin", "Peanuts", "Amosentoproxyl"],
+    medicalHistory: ["Vitamin D Deficiency", "Low Immunity"]
   );

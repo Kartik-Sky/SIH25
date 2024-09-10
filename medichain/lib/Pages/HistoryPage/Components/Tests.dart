@@ -54,6 +54,12 @@ List<TestDetails> _test_history=[
   testPreparations: ['Remove metal objects', 'Wear hospital gown'],
   cost: 150.00,
   comments: ['Technician: John Doe', 'Doctor: Review needed'],
+  Values: [
+    ["Hemoglobin", '15.00', 'g/dL', '13.00-17.00'],
+    ["PCV", '45.00', '%', '40.00-50.00'],
+    ["RBC Count", '4.50', 'mill/m3', '4.50-5.50'],
+    ["MCV", '91.00', 'fL', '83.00-101.00']
+  ]
 ),
 
   TestDetails(
@@ -74,6 +80,12 @@ List<TestDetails> _test_history=[
   testPreparations: ['Fast for 12 hours before test'],
   cost: 75.00,
   comments: ['Patient needs to be notified once results are in.'],
+  Values: [
+    ["Hemoglobin", '15.00', 'g/dL', '13.00-17.00'],
+    ["PCV", '45.00', '%', '40.00-50.00'],
+    ["RBC Count", '4.50', 'mill/m3', '4.50-5.50'],
+    ["MCV", '92.00', 'fL', '83.00-101.00']
+  ]
   ),
 
   TestDetails(
@@ -94,6 +106,12 @@ List<TestDetails> _test_history=[
   testPreparations: ['Do not eat or drink 4 hours before the test'],
   cost: 600.00,
   comments: ['Surgery may be required depending on the severity.'],
+  Values: [
+    ["Hemoglobin", '15.00', 'g/dL', '13.00-17.00'],
+    ["PCV", '45.00', '%', '40.00-50.00'],
+    ["RBC Count", '4.50', 'mill/m3', '4.50-5.50'],
+    ["MCV", '93.00', 'fL', '83.00-101.00']
+  ]
   ),
 
   TestDetails(
@@ -114,25 +132,37 @@ List<TestDetails> _test_history=[
   testPreparations: ['Stop blood thinners 3 days before the procedure'],
   cost: 500.00,
   comments: ['Follow-up appointment scheduled for next week.'],
+  Values: [
+    ["Hemoglobin", '15.00', 'g/dL', '13.00-17.00'],
+    ["PCV", '45.00', '%', '40.00-50.00'],
+    ["RBC Count", '4.50', 'mill/m3', '4.50-5.50'],
+    ["MCV", '94.00', 'fL', '83.00-101.00']
+  ]
   ),
-  TestDetails(
-  id: '005',
-  patientName: 'Eve Torres',
-  doctorName: 'Dr. Richard Kimble',
-  doctorType: 'Cardiologist',
-  testTime: DateTime(2024, 9, 15, 8, 45, 00),
-  hospitalName: 'Chicago Memorial Hospital',
-  hospitalLocation: 'Chicago, IL',
-  filePaths: ['path/to/ekg1.png'],
-  testName: 'EKG',
-  testType: 'Diagnostic',
-  testResult: 'Completed',
-  resultSummary: 'Normal sinus rhythm, no abnormalities detected.',
-  resultDate: DateTime(2024, 9, 15),
-  testDescription: 'Electrocardiogram to monitor heart activity.',
-  testPreparations: ['Avoid caffeine for 24 hours before the test'],
-  cost: 200.00,
-  comments: ['Patient advised to maintain a healthy diet and exercise.'],
-  )
+    TestDetails(
+    id: '005',
+    patientName: 'Eve Torres',
+    doctorName: 'Dr. Richard Kimble',
+    doctorType: 'Cardiologist',
+    testTime: DateTime(2024, 9, 15, 8, 45, 00),
+    hospitalName: 'Chicago Memorial Hospital',
+    hospitalLocation: 'Chicago, IL',
+    filePaths: ['path/to/ekg1.png'],
+    testName: 'EKG',
+    testType: 'Diagnostic',
+    testResult: 'Completed',
+    resultSummary: 'Normal sinus rhythm, no abnormalities detected.',
+    resultDate: DateTime(2024, 9, 15),
+    testDescription: 'Electrocardiogram to monitor heart activity.',
+    testPreparations: ['Avoid caffeine for 24 hours before the test'],
+    cost: 200.00,
+    comments: ['Patient advised to maintain a healthy diet and exercise.'],
+    Values: [
+      ["Hemoglobin", '15.00', 'g/dL', '13.00-17.00'],
+      ["PCV", '45.00', '%', '40.00-50.00'],
+      ["RBC Count", '4.50', 'mill/m3', '4.50-5.50'],
+      ["MCV", '95.00', 'fL', '83.00-101.00']
+    ]
+    )
 
 ];

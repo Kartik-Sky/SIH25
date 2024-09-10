@@ -13,6 +13,7 @@ class _NewsCardState extends State<NewsCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),

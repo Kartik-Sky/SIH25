@@ -188,7 +188,7 @@ class _PrescriptionCardState extends State<PrescriptionCard> {
           ],
         ),
       ),
-    );;
+    );
   }
 }
 
@@ -236,6 +236,3 @@ class PrescriptionDetails {
     required this.primaryComplain
   });
 }
-void showAnimatedDialog(BuildContext context) {
-    
-  }
